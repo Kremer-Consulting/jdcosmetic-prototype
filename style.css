@@ -1,0 +1,128 @@
+/* Prototyp des Shops von JD Cosmetic im Aufbau des SumUp Online-Shops.
+   SumUp kennt drei Schriftrollen: Überschriften, Fließtext, Beschriftungen. */
+@font-face{font-family:"Cormorant Garamond";font-weight:500;src:url(fonts/cormorant-garamond-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-weight:600;src:url(fonts/cormorant-garamond-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Montserrat";font-weight:400;src:url(fonts/montserrat-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Montserrat";font-weight:500;src:url(fonts/montserrat-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Montserrat";font-weight:600;src:url(fonts/montserrat-latin-600-normal.woff2) format("woff2")}
+
+:root{
+  --cream:#F5EEE4; --sand:#E4D8CF; --taupe:#CAB6A2; --espresso:#383028;
+  --text:#383028; --text-2:#6C5946; --on-dark:#F5EEE4;
+  --gold:#987848; --gold-deep:#725A36; --gold-light:#C9A96E;
+  --btn-hover:#2C241C;
+  --font-headers:"Cormorant Garamond",Georgia,serif;
+  --font-paragraphs:"Montserrat",system-ui,sans-serif;
+  --font-labels:"Montserrat",system-ui,sans-serif;
+  --wrap:1200px;
+}
+*{box-sizing:border-box;margin:0}
+body{background:var(--cream);color:var(--text);font:400 16px/1.65 var(--font-paragraphs)}
+img{max-width:100%;display:block}
+a{color:var(--gold-deep)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+h1,h2,h3{font-family:var(--font-headers);font-weight:500;line-height:1.15;color:var(--text)}
+.label{font:600 12px/1.4 var(--font-labels);letter-spacing:.14em;text-transform:uppercase;color:var(--text-2)}
+
+.proto{background:var(--espresso);color:var(--on-dark);font:500 12px/1.4 var(--font-labels);text-align:center;padding:6px 12px;letter-spacing:.04em}
+
+/* Kopf: Logo, Menü, Warenkorb (SumUp: Header-Einstellungen) */
+.header{background:var(--cream);border-bottom:1px solid var(--taupe)}
+.header .wrap{display:flex;align-items:center;gap:32px;height:96px}
+.header .logo img{height:72px;width:auto}
+.nav{display:flex;gap:28px;margin-left:auto}
+.nav a{font:600 13px var(--font-labels);letter-spacing:.12em;text-transform:uppercase;color:var(--text);text-decoration:none}
+.nav a:hover{color:var(--gold-deep)}
+.nav a.ext::after{content:" ↗";font-weight:400}
+.icons{display:flex;gap:18px}
+.icons svg{width:22px;height:22px;stroke:var(--text);fill:none;stroke-width:1.6}
+.burger{display:none;background:none;border:0;padding:0;cursor:pointer}
+
+/* Banner (SumUp: Homepage → Banner) */
+.banner{position:relative;background:var(--sand) url(img/banner.jpg) right center/cover no-repeat;min-height:520px;display:flex;align-items:center}
+.banner .wrap{width:100%}
+.banner .text{max-width:460px}
+.banner h1{font-size:60px;margin:10px 0 16px}
+.banner p{font-size:18px;color:var(--text-2);margin-bottom:28px}
+
+.btn{display:inline-block;background:var(--espresso);color:var(--on-dark);font:600 13px var(--font-labels);letter-spacing:.12em;text-transform:uppercase;padding:15px 30px;text-decoration:none;border:1px solid var(--espresso)}
+.btn:hover{background:var(--btn-hover)}
+.btn.secondary{background:transparent;color:var(--espresso)}
+.btn.secondary:hover{background:var(--sand)}
+
+/* Artikelkollektion */
+.section{padding:88px 0}
+.section.sand{background:var(--sand)}
+.head{text-align:center;margin-bottom:48px}
+.head h2{font-size:44px;margin-top:8px}
+.rule{width:64px;height:1px;background:var(--gold);margin:18px auto 0}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px}
+.card{text-decoration:none;color:var(--text);display:block}
+.card .ph{background:var(--sand);aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;padding:22px}
+.section.sand .card .ph{background:var(--cream)}
+.card .ph img{max-height:100%;width:auto}
+.card h3{font-size:22px;margin:14px 0 4px}
+.card .price{font-weight:500}
+.card .base{font-size:13px;color:var(--text-2)}
+.center{text-align:center;margin-top:44px}
+
+/* Text mit Bild */
+.twi{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.twi.rev .media{order:2}
+.twi h2{font-size:40px;margin:8px 0 18px}
+.twi p{margin-bottom:16px}
+.twi .media.prod{background:var(--sand);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:30px}
+.twi .media.prod img{max-height:100%;width:auto}
+
+/* Fußzeile (SumUp: Footer, Social-Links) */
+.footer{background:var(--espresso);color:var(--on-dark);padding:64px 0 28px}
+.footer .cols{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}
+.footer img{height:90px;width:auto;margin-bottom:12px}
+.footer a{color:var(--gold-light);text-decoration:none;display:block;margin:6px 0}
+.footer a:hover{text-decoration:underline}
+.footer .label{color:var(--gold-light);margin-bottom:10px}
+.footer .small{font-size:13px;opacity:.85;margin-top:44px;border-top:1px solid #5a4e42;padding-top:18px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* Produktseite */
+.crumbs{font-size:13px;color:var(--text-2);padding:22px 0}
+.crumbs a{color:var(--text-2)}
+.pdp{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;padding-bottom:88px}
+.gallery .main{background:var(--sand);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:40px}
+.gallery .main img{max-height:100%;width:auto}
+.pdp h1{font-size:48px;margin:6px 0 10px}
+.pdp .price{font-size:24px;font-weight:500}
+.pdp .tax{font-size:13px;color:var(--text-2);margin-bottom:22px}
+.qty{display:flex;align-items:center;border:1px solid #6C5946;width:max-content;margin:8px 0 18px}
+.qty span{padding:10px 18px}
+.qty b{padding:10px 18px;font-weight:500}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:34px}
+.desc p{margin-bottom:14px}
+.desc .first{font-weight:500;border-left:2px solid var(--gold);padding-left:12px}
+.desc ul{padding-left:20px;margin-bottom:14px}
+.ph-note{background:var(--sand);border:1px dashed var(--text-2);padding:12px 14px;font-size:14px;margin:6px 0 14px}
+.grid4{grid-template-columns:repeat(4,1fr)}
+
+@media (max-width:820px){
+  .wrap{padding:0 16px}
+  .header .wrap{height:72px;gap:12px}
+  .header .logo img{height:52px}
+  .nav{display:none}
+  .nav.open{display:flex;flex-direction:column;gap:0;position:absolute;left:0;right:0;top:100%;background:var(--cream);border-bottom:1px solid var(--taupe);padding:8px 16px 16px;z-index:10}
+  .nav.open a{padding:12px 0;border-bottom:1px solid var(--sand)}
+  .header{position:relative}
+  .burger{display:block}
+  .icons{margin-left:auto}
+  .banner{min-height:560px;align-items:flex-start;padding-top:36px;background-size:auto 340px;background-position:right -110px bottom}
+  .banner h1{font-size:40px}
+  .banner p{font-size:16px}
+  .section{padding:56px 0}
+  .head h2{font-size:34px}
+  .grid,.grid4{grid-template-columns:repeat(2,1fr);gap:16px}
+  .card h3{font-size:19px}
+  .twi{grid-template-columns:1fr;gap:28px}
+  .twi.rev .media{order:0}
+  .twi h2{font-size:32px}
+  .footer .cols{grid-template-columns:1fr}
+  .pdp{grid-template-columns:1fr;gap:28px}
+  .pdp h1{font-size:36px}
+}
