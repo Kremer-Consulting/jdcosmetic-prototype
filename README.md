@@ -14,12 +14,17 @@ Bestellen ist hier nicht möglich.
 | Seite | Datei |
 |---|---|
 | Startseite | [`index.html`](index.html) |
-| Produktseite (Beispiel 24H Hydra Boost Cream) | [`produkt.html`](produkt.html) |
+| 24H Hydra Boost Cream | [`produkt-hydra-boost.html`](produkt-hydra-boost.html) |
+| Mimic Relax Concentrate | [`produkt-mimic-relax.html`](produkt-mimic-relax.html) |
+| Clear Skin Cream | [`produkt-clear-skin.html`](produkt-clear-skin.html) |
+| Intense Eye Care | [`produkt-intense-eye.html`](produkt-intense-eye.html) |
+| Micelle Cleanser | [`produkt-micelle-cleanser.html`](produkt-micelle-cleanser.html) |
+| Kontakt (Formular nur als Ansicht) | [`kontakt.html`](kontakt.html) |
 
 ## Technik
 
 - Reines HTML und CSS, ein kleines Skript für das mobile Menü ([`menu.js`](menu.js)); nur relative Pfade.
-- Keine Cookies, keine Formulare, keine Inhalte von fremden Servern (Schriften liegen in [`fonts/`](fonts/)).
+- Keine Cookies, keine Formulare (das Kontaktformular ist nur eine Ansicht), keine Inhalte von fremden Servern (Schriften liegen in [`fonts/`](fonts/)).
 - `noindex, nofollow` auf jeder Seite und [`robots.txt`](robots.txt): Suchmaschinen sollen den Prototyp nicht
   aufnehmen.
 
